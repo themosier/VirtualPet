@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ObjectScenes/CreatureJump.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/MinigameJumpScene.cs" type="Script" id=2]
+[ext_resource path="res://Backgrounds/backgrounds.png" type="Texture" id=3]
+[ext_resource path="res://ObjectScenes/Platform.tscn" type="PackedScene" id=4]
+
+[node name="MinigameJumpScene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -47, 34 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 1000, 64 )
+
+[node name="Platform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16, 53 )
+
+[node name="Platform2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 55, 40 )
+
+[node name="Platform3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 140, 37 )
+
+[node name="Platform4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 100, 53 )
+
+[node name="CreatureJump" parent="." instance=ExtResource( 1 )]
+position = Vector2( -23, -7 )

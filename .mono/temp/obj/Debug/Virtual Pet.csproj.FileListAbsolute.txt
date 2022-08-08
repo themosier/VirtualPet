@@ -1,0 +1,9 @@
+D:\GamesProjects\VirtualPet\.mono\temp\bin\Debug\Virtual Pet.dll
+D:\GamesProjects\VirtualPet\.mono\temp\bin\Debug\Virtual Pet.pdb
+D:\GamesProjects\VirtualPet\.mono\temp\obj\Debug\Virtual Pet.csproj.AssemblyReference.cache
+D:\GamesProjects\VirtualPet\.mono\temp\obj\Debug\Virtual Pet.GeneratedMSBuildEditorConfig.editorconfig
+D:\GamesProjects\VirtualPet\.mono\temp\obj\Debug\Virtual Pet.AssemblyInfoInputs.cache
+D:\GamesProjects\VirtualPet\.mono\temp\obj\Debug\Virtual Pet.AssemblyInfo.cs
+D:\GamesProjects\VirtualPet\.mono\temp\obj\Debug\Virtual Pet.csproj.CoreCompileInputs.cache
+D:\GamesProjects\VirtualPet\.mono\temp\obj\Debug\Virtual Pet.dll
+D:\GamesProjects\VirtualPet\.mono\temp\obj\Debug\Virtual Pet.pdb
