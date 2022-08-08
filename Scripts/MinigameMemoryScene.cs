@@ -15,10 +15,28 @@ public class MinigameMemoryScene : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        colors.Add("blue");
-        colors.Add("orange");
-        colors.Add("pink");
-        colors.Add("yellow");
+        var file = new File();
+        file.Open("res://Levels/Memory.txt", File.ModeFlags.Read);
+        while (!file.EofReached())
+        {
+            string line = file.GetLine();
+            colors.Add(line);
+            colors.Add(line);
+        }
+        file.Close();
+
+        GD.Randomize();
+        colors.Shuffle();
+        foreach (string c in colors)
+        {
+            GD.Print(c);
+        }
+        
+
+        //colors.Add("blue");
+        //colors.Add("orange");
+        //colors.Add("pink");
+        //colors.Add("yellow");
 
         cardsParent = GetNode<Node>("Cards");
 
@@ -33,10 +51,10 @@ public class MinigameMemoryScene : Node2D
         int i = 0;
         foreach (Card child in cards)
         {
-            child.SetColor(colors[i++ / 2]);
+            child.SetColor(colors[i++]);
         }
     }
-
+    
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
