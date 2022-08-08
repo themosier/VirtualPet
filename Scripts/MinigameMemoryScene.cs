@@ -33,19 +33,7 @@ public class MinigameMemoryScene : Node2D
         }
         
 
-        //colors.Add("blue");
-        //colors.Add("orange");
-        //colors.Add("pink");
-        //colors.Add("yellow");
-
         cardsParent = GetNode<Node>("Cards");
-
-        //for (int i = 0; i < 8; i++)
-        //{
-        //    cards[i] = GetNode<AnimatedSprite>("Card" + i);
-        //    cards[i].Animation = colors[i / 2];
-        //    cards[i].Play();
-        //}
 
         cards = cardsParent.GetChildren();
         int i = 0;
@@ -60,11 +48,6 @@ public class MinigameMemoryScene : Node2D
     {
         if (selectedCards.Count >= 2)
         {
-            //if (selectedCards[0].selTimer.TimeLeft == 0 && selectedCards[1].selTimer.TimeLeft == 0)
-            //{
-            //    CheckMatch(selectedCards[0], selectedCards[1]);
-            //    selectedCards.Clear();
-            //}
             if (selectedCards[0].IsSelected() && selectedCards[1].IsSelected())
             {
                 CheckMatch(selectedCards[0], selectedCards[1]);
@@ -75,10 +58,8 @@ public class MinigameMemoryScene : Node2D
        if (cards.Count == 0)
         {
             Global glob = GetNode<Global>("/root/Global");
-            //glob.homeScene.boredomTimer.Start();
-            //glob.GotoScene("res://Scenes/HomeScene.tscn");
 
-            GetTree().ChangeSceneTo(glob.homeScene);
+            glob.LoadHomeScene();
         }
     }
 
@@ -86,12 +67,6 @@ public class MinigameMemoryScene : Node2D
     public void SelectCard(Card c)
     {
         selectedCards.Add(c);
-
-        if (selectedCards.Count >= 2)
-        {
-            //CheckMatch(selectedCards[0], selectedCards[1]);
-            //selectedCards.Clear();
-        }
     }
 
     public void CheckMatch(Card c1, Card c2)

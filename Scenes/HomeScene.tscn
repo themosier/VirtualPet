@@ -167,6 +167,7 @@ percent_visible = false
 
 [node name="Timer" type="Timer" parent="HungerBar"]
 wait_time = 2.0
+autostart = true
 
 [node name="FoodButton" type="TextureButton" parent="."]
 margin_left = 2.0

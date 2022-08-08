@@ -16,9 +16,13 @@ public class HomeScene : Node2D
     private bool statusActive = false;
     private float statusActiveTime = 0.0f;
 
+    Global glob;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        glob = GetNode<Global>("/root/Global");
+
         hungerBar = GetNode<ProgressBar>("HungerBar");
         hungerBar.Value = 10;
         boredomBar = GetNode<ProgressBar>("BoredomBar");
@@ -98,10 +102,10 @@ public class HomeScene : Node2D
 
 
 
-        GetTree().ChangeScene("res://Scenes/MinigameMemoryScene.tscn");
+        glob.SwitchScene("res://Scenes/MinigameMemoryScene.tscn");
         statusLabel.BbcodeText = "[center]playing[/center]";
         statusActive = true;
     }
+
 }
 
-public class GDArray<T> : Godot.Collections.Array<T> { }
